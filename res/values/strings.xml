@@ -4,5 +4,6 @@
     <string name="app_name">Clipsdroid Console</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="welcomeMessage">Welcome. Running CLIPS </string>
 
 </resources>
