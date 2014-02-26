@@ -36,4 +36,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <EditText
+        android:id="@+id/eTInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tVWelcome"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/btInput"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btInput"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/runCommand"
+        android:onClick="runCommand" />
+
+    <TextView
+        android:id="@+id/tVOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btInput"
+        android:layout_alignLeft="@+id/tVWelcome"
+        android:layout_alignRight="@+id/btInput"
+        android:layout_below="@+id/tVWelcome"
+        android:gravity="bottom|left" />
+
 </RelativeLayout>

@@ -28,5 +28,6 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="welcomeMessage">Welcome. Running CLIPS </string>
+    <string name="runCommand">Run</string>
 
 </resources>

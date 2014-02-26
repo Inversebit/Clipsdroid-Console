@@ -25,21 +25,29 @@
 package org.inversebit.clipsdroidconsole.main;
 
 
-import eu.deustotech.clips.Environment;
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import eu.deustotech.clips.Environment;
+import eu.deustotech.clips.PrimitiveValue;
 
 
 public class MainActivity extends Activity
 {
 
+	private Environment clips;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		clips = new Environment();
 		
 		((TextView)findViewById(R.id.tVWelcome))
 			.setText(
@@ -47,6 +55,19 @@ public class MainActivity extends Activity
 				Environment.getCLIPSVersion());
 	}
 
+	public void runCommand(View pView){
+		String command = getCommandFromGUI();
+		PrimitiveValue pv = clips.eval(command);
+		Object o =  pv.getValue();
+		((TextView)findViewById(R.id.tVOutput)).append("" + o);
+		((TextView)findViewById(R.id.tVOutput)).append("\n");
+	}
+
+	private String getCommandFromGUI()
+	{
+		return ((EditText)findViewById(R.id.eTInput)).getText().toString();
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
